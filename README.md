@@ -1,6 +1,6 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) # Project 2 - Ames Housing Data and Kaggle Challenge
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-## Project 2 - Ames Housing Data and Kaggle Challenge
+# Project 2 - Ames Housing Data and Kaggle Challenge
 
 ### Deatils
 Name: Damar Shipp Jr
@@ -35,11 +35,11 @@ Housing prices are influenced by numerous factors such as the year it was built,
 
 The regression model, after preprocessing and feature engineering, was trained and tested on the housing data. The following results were obtained:
 
-- **Mean Squared Error (MSE)**: [1534797270.1862338]
-- **Mean Absolute Error (MAE)**: [28423.027612776878]
-- **R-squared**: [28423.027612776878]
+- **Mean Squared Error (MSE)**: [648302718.3885]
+- **Mean Absolute Error (MAE)**: [17793.5243]
+- **R-squared**: [89.08%]
   
-The model was able to make fairly accurate predictions, though some further improvements could be made by revamping the hyperparameters, or adding/removing more features.
+The model was able to make fairly accurate predictions when using a tranformation approach like log-trans, though some further improvements could be made by revamping or adding/removing more features.
 
 ## Data Overview 
 #### Provided Data
@@ -48,35 +48,34 @@ The dataset used in this project contains multi-features related to the houses, 
 
 - **Year Built**: The year the house was built
 - **Full Bath**: Number of full size bathrooms in the house
-- **Garage Cars** Number of cars the garage can hold
 - **Year Remod/Add**: The improve quality of the house
 - **Garage Area**: Size of the garage in square feet
+- **Fireplaces** Number of fireplaces in the home
 
 Additionally, the dataset contains missing values and categorical variables, which had to be filled or drop at your own suggested decision.
+- Used the median to fill any missing numerical data and mode to fill any categorical data.
 
 ---
 
 ## Model Explanation
 #### Methods
 
-The model used in this project is a **Linear Regression** with **Lasso Regularization** to prevent overfitting and to improve the model's capability to generalize. Lasso regression was selected because it helps in selecting important variables.
+The model used in this project is a **Linear Regression** with **Log-Transformation** to help address the sked nature of the data.
 
 Steps involved(Key steps):
 
-- **Preprocessing**: Missing values were identified and filled, and categorical features were encoded.
-- **Modeling**: Lasso regression was applied to predict house prices.
-- **Evaluation**: Model performance was assessed using various metrics like MSE and MAE.
-- 
+- **Preprocessing**: Missing values were identified and filled, and categorical features weere binarized if needed.
+- **Modeling**: Log-Transformaion was applied to predict house prices and then reverted back for the final prediction.
+- **Evaluation**: Model performance was assessed using various metrics like R^2, MSE and MAE.
 
 ## Next Steps
 
 The following improvements and next steps can be considered to enhance the model:
 
 To improve the model, we can:
-1. **Tune the model**: Optimize the Lasso model by adjusting its parameters.
+1. **Tune the model**: Optimize the Linear Regression model by adjusting/ adding parameters.
 2. **Add more features**: Identify other relevant features that could enhance prediction accuracy.
-3. **Test with other models**: Experiment with algorithms like scaling and squaring to compare performance.
-   
+3. **Test with other models**: Experiment with algorithms like scaling and squaring to compare performance.   
 
 ## Requirements
 To retrace my steps, ensure you have the following...
@@ -91,7 +90,7 @@ To retrace my steps, ensure you have the following...
   
 - Seaborn
 
-- Scikit Learn(Linear Regression, MSE, MAE, R2, TTS, Dummy Regressor, Simple Inputer, One Hot Encoder, and Column Transformer)
+- Scikit Learn(Linear Regression, MSE, MAE, R2, TTS, Dummy Regressor)
 
 - Statsmodels
 
