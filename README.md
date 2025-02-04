@@ -2,7 +2,7 @@
 
 # Project 2 - Ames Housing Data and Kaggle Challenge
 
-### Deatils
+### Details
 Name: Damar Shipp Jr
 
 Class: DSB-10155
